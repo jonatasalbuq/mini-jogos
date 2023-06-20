@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background: gray url("img/background.jpg") center top no-repeat fixed;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1{
+    display: inline;
+    text-align: center;
+    margin: 50px auto;
+    font-family: 'Rubik Iso', cursive;
+    font-size: 50px;
+    animation: AnimacaoTitulo 5s infinite ease-in-out;
+    cursor: default;
+    transition: 300ms;
+    transform: translate(0, -50%);
+    user-select: none;
+}
+
+@keyframes AnimacaoTitulo{
+    0%{
+        rotate: 2deg;
+    }
+    25%{
+        rotate: -2deg;
+    }
+    50%{
+        rotate: 2deg;
+    }
+    75%{
+        rotate: -2deg;
+    }
+    100%{
+        rotate: 2deg;
+    }
+}
+
+@keyframes MoverTitulo{
+    0%{
+        transform: translate(0, -50%);
+    }
+
+    100%{
+        transform: translate(0, -200px);
+    }
+}
+
+h1:hover{
+    font-size: 55px;
+}
+
+.mover-letra:hover{
+    position: relative;
+    bottom: 10px;
+}
+
+
+main{
+    position: absolute;
+    background-color: rgb(114, 114, 114);
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    padding: 20px;
+    background-color: transparent;
+    backdrop-filter: blur(7px);
+    border: 2px solid rgb(77, 77, 77);
+    animation: LoginAnimacao 700ms ease-out;
+    transition: 500ms;
+}
+
+@keyframes LoginAnimacao {
+    0% {
+      width: 0;
+      padding: 0;
+    }
+
+    100% {
+      width: 350px;
+      padding: 20px;
+    }
+}
+
+@keyframes MoverMenu{
+    0%{
+        transform: translate(-50%, -50%);
+    }
+    
+    100%{
+        transform: translate(-50%, 1000px);
+    }
+}
+
+label{
+    display: block;
+    font-size: 1.3em;
+    animation: CarregarItens 3s ease-out;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+abbr{
+    text-decoration: none ;
+}
+
+#user{
+    width: 100%;
+    border-radius: 30px;
+    border-style: none;
+    outline-style: none;
+    padding: 5px 10px;
+    font-size: 1.5em;
+    animation: CarregarItens 2s ease-out;
+}
+
+p#mensagem-alerta{
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: sans-serif;
+    color: rgb(255, 38, 0);
+    font-weight: bold;
+    animation: CarregarItens 250ms ease-out;
+}
+
+input[type="button"]{
+    position: absolute;
+    display: none;
+    top: 48%;
+    left: 50%;
+    background-color: rgb(40, 73, 1);
+    color: white;
+    transform: translate(-50%,-50%);
+    padding: 15px 25px;
+    border-radius: 60px;
+    margin: 50px auto;
+    font-size: 20px;
+    border-style: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+input[type="button"]:hover{
+    background-color: rgb(28, 51, 1);
+    cursor: pointer;
+}
+
+input[type="button"]:active{
+    padding: 13px 23px;
+}
+
+@keyframes CarregarItens{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+
+}
+
+

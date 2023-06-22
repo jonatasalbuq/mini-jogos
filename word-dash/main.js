@@ -63,7 +63,6 @@ setInterval(function(){
         // O botão "Iniciar" some
         botaoIniciar.style.display = "none"
     } 
-
 })
 
 // Essa função acontece quando o usuário clicar no botão "Iniciar"
@@ -75,12 +74,12 @@ function Iniciar(){
         // A página é recarregada
         location.reload()
     }
-
     // A janela vai ser movida para baixo
-    janelaLogin.style.animation += "MoverMenu 2s forwards"
+    janelaLogin.style.animation += "MoverMenu 2.5s"
     // O título do jogo será movido para cima
-    titulo.style.animation += "MoverTitulo 2s forwards"
-
+    titulo.style.animation += "MoverTitulo 2.5s"
     // Função que redirecionará para outra parte da página
-    setTimeout(function(){window.location.href = "jogo.html"}, 2000)
+    setTimeout(function(){window.location.href = "game.html"}, 2000)
+    // O campo "Usuário" ficará vazio se desejar voltar para a página anterior
+    userName.value = null
 }

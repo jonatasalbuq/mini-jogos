@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Dash</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body onload="ExecuteGame()" id="body-game">
+    <div id="courtesy">
+        <p id="welcome"></p>
+        <p id="choose-diff" style="display: none;">Escolha a dificuldade do jogo:</p>
+        <ul id="difficulty" style="display: none;">
+            <li id="easy" onclick="Easy()">Fácil&#x1F512;</li>
+            <li id="normal" onclick="Normal()">Normal</li>
+            <li id="hard" onclick="Hard()">Difícil&#x1F512;</li>
+            <li id="special" onclick="Special()">Especial&#x1F512;</li>
+        </ul>
+    </div>
+    <div id="game-window" style="display: none;">
+        <button id="initiate">Começar</button>
+        <div id="word-dash" style="display: none;">
+            <p id="word-required">3</p>
+            <input type="text" name="input-word" id="input-word" placeholder="Digite aqui a palavra requisitada">
+        </div>
+        <div id="points" style="display: none;">
+            <p id="show-user"></p>
+            <p id="score">| Acertos: 0</p>
+            <p id="mistakes">| Erros: 0|</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
+
+<!-- O jogo está praticamente feito, mas pode conter alguns bugs.
+Faltou animar algumas partes do jogo e também só tem a dificuldade "normal" liberado. Em breve vou trabalhar nas outras dificuldades, principalmente o modo "especial".
+E também, cedo ou tarde, eu utilizarei medias queries no código para que todos (ou a maioria) os dispositivos possam jogar sem problema algum. -->

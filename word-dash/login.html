@@ -6,19 +6,17 @@
     <title>Word Dash</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1 id="titulo">
-        <span class="mover-letra">W</span><span class="levantar-letra">o</span><span class="mover-letra">r</span><span class="mover-letra">d</span>
-        <span class="mover-letra">D</span><span class="mover-letra">a</span><span class="mover-letra">s</span><span class="mover-letra">h</span>
+<body id="body-login">
+    <h1 id="tittle">
+        <span class="move-letter">W</span><span class="move-letter">o</span><span class="move-letter">r</span><span class="move-letter">d</span>
+        <span class="move-letter">D</span><span class="move-letter">a</span><span class="move-letter">s</span><span class="move-letter">h</span>
     </h1>   
-    <main id="janela-login">
-        <section>
-            <label for="user" id="label">Usuário <abbr title="O nome de usuário não pode ultrapassar 15 caracteres e não pode conter espaços em branco.">🛈</abbr></label>
-            <input type="text" name="user" id="user">
-            <p id="mensagem-alerta"></p>
-            <input type="button" value="Iniciar" id="botao-iniciar" onclick="Iniciar()">
-        </section>
-    </main>
+    <div id="login-window">
+        <label for="user-field" id="label">Usuário <abbr title="O nome de usuário não pode ultrapassar 15 caracteres e não pode conter espaços em branco.">🛈</abbr></label>
+        <input type="text" name="user-field" id="user-field">
+        <p id="alert-message"></p>
+        <input type="button" value="Iniciar" id="start-button" onclick="Start()">
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

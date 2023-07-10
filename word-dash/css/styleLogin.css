@@ -63,6 +63,10 @@ abbr{
     text-decoration: none ;
 }
 
+abbr > img{
+    width: 17px;
+}
+
 #user-field{
     width: 100%;
     border-radius: 30px;

@@ -1,0 +1,112 @@
+@keyframes AnimacaoTexto{
+    0%{
+        rotate: 2deg;
+    }
+    25%{
+        rotate: -2deg;
+    }
+    50%{
+        rotate: 2deg;
+    }
+    75%{
+        rotate: -2deg;
+    }
+    100%{
+        rotate: 2deg;
+    }
+}
+
+@keyframes LoginAnimacao {
+    0% {
+      width: 0;
+      padding: 0;
+    }
+
+    100% {
+      width: 350px;
+      padding: 20px;
+    }
+}
+
+@keyframes CarregarItem{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes DescarregarItem{
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes MoverTitulo{
+    0%{
+        transform: translate(0, -50%);
+    }
+
+    100%{
+        transform: translate(0, -200px);
+    }
+}
+
+@keyframes MoverMenu{
+    0%{
+        transform: translate(0,-50%);
+    }
+    
+    100%{
+        transform: translate(0, 1000px);
+    }
+}
+
+@keyframes EncolherItem{
+    from{
+        height: 150px;
+    }
+
+    to{
+        height: 0;
+        box-shadow: none;
+    }
+}
+
+@keyframes AchatarItem{
+    from{
+        width: 235px;
+        height: 95px;
+    }
+
+    to{
+        height: 95px;
+        width: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@keyframes ExpandirPontos{
+    from{
+        height: 0;
+    }
+
+    to{
+        height: 50px;
+    }
+}

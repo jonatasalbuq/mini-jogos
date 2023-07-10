@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    background: rgb(20, 20, 20) url("../img/background.jpg") center top no-repeat fixed;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+}
+
+#courtesy{
+    height: 100vh;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    transition: opacity 2s;
+}
+
+#welcome{
+    font-family: 'Orbit', sans-serif;
+    font-size: 3em;
+    user-select: none;
+    text-align: center;
+    animation: AnimacaoTexto 25s infinite ease-in-out, CarregarItem 3s ease-out ;
+}
+
+#choose-diff{
+    font-family: 'Orbit', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    transition: opacity 1s;
+}
+
+#difficulty{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: flex-end;
+    transition: opacity 1s;
+}
+
+#difficulty > li{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbit', sans-serif;
+    font-size: 1.5em;
+    border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+#easy{
+    background-color: green;
+    box-shadow: 0 0 7px 2px green;
+}
+
+#easy:hover{background-color: rgb(3, 59, 3);}
+
+#normal{
+    background-color: gray;
+    box-shadow: 0 0 7px 2px gray;
+}
+
+#normal:hover{background-color: rgb(75, 75, 75);}
+
+#hard{
+    background-color: red;
+    box-shadow: 0 0 7px 2px red;
+}
+
+#hard:hover{background-color: rgb(102, 9, 9);}
+
+#special{
+    background-color: orangered;
+    box-shadow: 0 0 7px 2px orangered;
+}
+
+#special:hover{background-color: rgb(87, 28, 6)}
+
+#easy:active,#normal:active,#hard:active,#special:active{
+    height: 140px;
+    width: 140px;
+    margin: 0 5px;
+    font-size: 1.4em;
+    transform: translate(0, -5px);
+}
+
+#difficulty > li.clicked:active{
+    height: 150px;
+    width: 150px;
+    margin: 0;
+    font-size: 1.5em;
+    transform: translate(0, 0);
+}
+
+#word-dash{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#initiate{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    background-color: rgb(40, 73, 1);
+    border-radius: 60px;
+    border-style: none;
+    padding: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#initiate:hover{
+    background-color: rgb(28, 51, 1);
+}
+
+#initiate:active{
+    padding: 17px;
+}
+
+#word-required{
+    font-size: 3em;
+    text-shadow: 10px 0 1px 100px black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif;
+    border: solid 3px rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 15px;
+    background-color: black;
+    user-select: none;
+    transition: 1s;
+}
+
+#input-word{
+    padding: 5px;
+    width: 450px;
+    margin: 40px 0 20px 0;
+    font-size: 1.7em;
+    border-style: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    outline-style: none;
+}
+
+#pause-play{
+    position: absolute;
+    top: 100%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    border-style: none;
+    cursor: pointer;
+    border: solid 2px white;
+}
+
+#img-pause-play{
+    width: 100%;
+}
+
+#points{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    border: solid 2px rgba(136, 136, 136, 0.521);
+    backdrop-filter: blur(15px);
+    left: 0;
+    font-size: 2em;
+    font-family: 'Orbit', sans-serif;
+}

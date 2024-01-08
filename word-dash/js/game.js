@@ -8,26 +8,13 @@ if(userName == null || userName == undefined){
     location.href = "login.html"
 }
 
-// Mensagem de boas vindas
-welcome.innerHTML = `BEM-VINDO(A), ${userName}`
+// A mensagem "Escolha a dicifuldade do jogo" aparecerá lentamente
+chooseDiff.style.display = "block"
+chooseDiff.style.animation = "CarregarItem 2s ease-out"
 
-// Função setTimeOut que vai organizar o tempo de execução das seguintes coisas:
-setTimeout(function(){
-    // A mensagem de boas vindas vai desaparecer lentamente
-    welcome.style.animation = "AnimacaoTexto 25s infinite ease-in-out, DescarregarItem 3s ease-out forwards"
-    // Outra função setTimeOut que vai fazer o parágrafo de boas vindas sumir de vez do documento em 3 segundos
-    setTimeout(function(){welcome.style.display = "none"}, 3000)
-    // Mais uma função de setTimeOut que fará as seguintes coisas:
-    setTimeout(function(){
-        // A mensagem "Escolha a dicifuldade do jogo" aparecerá lentamente
-        chooseDiff.style.display = "block"
-        chooseDiff.style.animation = "CarregarItem 2s ease-out"
-
-        // A lista de dificuldade também aparecerá lentamente
-        diff.style.display = "flex"
-        diff.style.animation = "CarregarItem 3s ease-out"
-    }, 3000)
-}, 5000)
+// A lista de dificuldade também aparecerá lentamente
+diff.style.display = "flex"
+diff.style.animation = "CarregarItem 3s ease-out"
 
 // Esta função irá misturar as letras do alfabeto e retornar um array delas
 function LetterMixer(){
@@ -58,7 +45,7 @@ function GamePrepare(gameMode){
     let hardLvl = document.querySelector("#hard")
     let specLvl = document.querySelector("#special")
     let gameWindow = document.querySelector("#game-window")
-    let userName = localStorage.getItem("userName")     // Resgata novamente o nome do usuário
+    let userName = localStorage.getItem("userName")     // Resgata o nome do usuário
     let showUser = document.querySelector("#show-user")
     let init = document.querySelector("#initiate")
     let wordDash = document.querySelector("#word-dash")

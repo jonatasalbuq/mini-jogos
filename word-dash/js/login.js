@@ -13,7 +13,7 @@ userField.addEventListener("input", function(){
     this.value = this.value.toUpperCase()
 
     // Se o que foi digitado no campo "Usuário" atender as condições abaixo, então ele mexe em algumas configurações:
-    if(userField.value.length >= 1 && userField.value.length <= 15){
+    if(userField.value.length >= 3){
         // O tamanho da janela aumenta para caber o botão "Iniciar"
         loginWindow.style.height = "170px" 
         // O botão "Iniciar" aparece lentamente
@@ -23,19 +23,7 @@ userField.addEventListener("input", function(){
         // O botão fica visível
         startButton.style.display = "block"    
         // A mensagem que é disparada quando o usuário digita mais de 15 caracteres ou coloca espaços em branco é apagada
-        msgAlerta.textContent = null    
-    }
-
-    // Se o usuário digitar mais de 15 caracteres no campo, os seguintes comandos serão executados:
-    else if(userField.value.length > 15){
-        // O tamanho da janela aumenta para caber a mensagem de alerta
-        loginWindow.style.height = "135px"
-        // O botão "Iniciar" some
-        startButton.style.display = "none"
-        // O campo "Usuário" muda de cor para vermelho
-        userField.style.backgroundColor = "rgb(245, 76, 46)"
-        // A mensagem de alerta é exibida
-        msgAlerta.textContent = "O nome de usuário não pode ultrapassar 15 caracteres."
+        msgAlerta.textContent = null   
     }
 
     // Se nenhuma das condições acima for atendida, ou seja, não tiver nada digitado, esta será executada
@@ -50,8 +38,8 @@ userField.addEventListener("input", function(){
         loginWindow.style.height = "120px"  
     }
 
-    // Se o que o usuário digitou contiver espaços em branco, serão lançados esses comandos:
-    if(userField.value.includes(" ")){
+    // Se o nome do usuário conter
+    if(/\s/.test(userField.value)){
         // A janela vai aumentar um pouco de tamanho para caber a mensagem de alerta
         loginWindow.style.height = "135px"
         // O campo "Usuário" muda de cor para vermelho

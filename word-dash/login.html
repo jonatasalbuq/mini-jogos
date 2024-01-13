@@ -8,20 +8,35 @@
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
     <title>Word Dash</title>
 </head>
-<body id="body-login">
+<body>
     <h1 id="tittle">
         <span class="move-letter">W</span><span class="move-letter">o</span><span class="move-letter">r</span><span class="move-letter">d</span>
         <span class="move-letter">D</span><span class="move-letter">a</span><span class="move-letter">s</span><span class="move-letter">h</span>
     </h1>   
-    <div id="login-window">
-        <label for="user-field" id="label">Usuário
-            <abbr title="O nome de usuário não pode ultrapassar 15 caracteres e não pode conter espaços em branco.">
-                <img src="img/info.png" alt="Informação">
-            </abbr>
-        </label>
-        <input type="text" name="user-field" id="user-field" maxlength="15">
-        <p id="alert-message"></p>
-        <input type="button" value="Iniciar" id="start-button" onclick="Start()">
+    <div id="container">
+        <button id="return-btn" onclick="Return()" style="display: none;">
+            <img src="img/retornar.png">
+        </button>
+        <div id="menu-card">
+            <div id="gamemodes">
+                <button id="singleplayer" onclick="Gamemode('singleplayer')">Um jogador</button>
+                <button id="multiplayer" onclick="Gamemode('multiplayer')">Multijogador</button>
+            </div>
+            <div id="opt-singleplayer" style="display: none;">
+                <p>Digite seu nome</p>
+                <input type="text" id="player-0" class="nickname">
+            </div>
+            <div id="opt-multiplayer" style="display: none;">
+                <p>Nome do jogador 1</p>
+                <input type="text" id="player-1" class="nickname">
+                <p>Nome do jogador 2</p>
+                <input type="text" id="player-2" class="nickname">
+                <p>Nome do jogador 3</p>
+                <input type="text" id="player-3" class="nickname">
+                <p>Nome do jogador 4</p>
+                <input type="text" id="player-4" class="nickname">
+            </div>
+        </div>
     </div>
     <script src="js/login.js"></script>
 </body>

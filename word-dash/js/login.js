@@ -3,90 +3,89 @@ let gamemodes = document.querySelector("#gamemodes")
 let optSingleplayer = document.querySelector("#opt-singleplayer")
 let optMultiplayer = document.querySelector("#opt-multiplayer")
 let returnBtn = document.querySelector("#return-btn")
+let playersName = document.querySelectorAll(".playername")
+let alertMsg = document.querySelector("#alert-msg")
+let startBtn = document.querySelector("#start-btn")
+
 
 // let userField = document.querySelector("#user-field")
-// let startButton = document.querySelector("#start-button")
-// let msgAlerta = document.querySelector("#alert-message")
-// let tittle = document.querySelector("#tittle")
+// let tittle = document.querySelector("h1")
 
-// // Vai manter o cursor no campo "Usuário" quando a página carregar
-// userField.focus()
-
+// Caso o jogador tenha escolhido umas das opções do modo do jogo, esta função é executada
 function Gamemode(mode){
+    // Se o jogador selecionou a opção "Um jogador", a tela da mesma será exibida
+    if(mode == "singleplayer") optSingleplayer.style.display = "block"
+    
+    // Se o jogador selecionou a opção "Multiplayer", a tela da mesma será exibida
+    if(mode == "multiplayer") optMultiplayer.style.display = "block"
+
+    // A tela de opções de modos do jogo some
     gamemodes.style.display = "none"
+    // O botão para retornar à tela de opções de modos do jogo aparece
     returnBtn.style.display = "block"
-
-    if(mode == "singleplayer"){
-        optSingleplayer.style.display = "flex"
-    }
-
-    if(mode == "multiplayer"){
-        optMultiplayer.style.display = "flex"
-    }
+    // Ativa o cursor imediatamente no campo (selecionado item 0 temporariamente)
+    playersName[0].focus()
 }
 
+// Caso o jogador aperte o botão de voltar, esta função é executada
 function Return(){
+    // A opção de modo do jogo escolhida desaparece
     optSingleplayer.style.display = "none"
     optMultiplayer.style.display = "none"
+    // A tela de opções de modos do jogo aparece
     gamemodes.style.display = "flex"
+    // O botão de voltar desaparece
     returnBtn.style.display = "none"
+    // O array "playersName" é iterado e, em cada item, é apagado o que havia sido digitado nos nomes dos jogadores
+    playersName.forEach(playerName => playerName.value = "")
+    // O botão "Iniciar" desaparece
+    startBtn.style.display = "none"
+    // A janela terá sua altura ajustada de modo automático
+    menuCard.style.height = "auto"
 }
 
+// Função "for" que vai adicionar, em cada campo de nome do jogador, um ouvinte de evento de digitação 
+for(const playerName of playersName){
+    playerName.addEventListener("input", () => {
+        if(playerName.value.length >= 3){
+            // O botão "Iniciar" fica totalmente visível
+            startBtn.style.display = "block"
+            // O campo do nome do jogador fica na cor padrão
+            playerName.style.backgroundColor = "white"
+            // A mensagem de alerta é apagada e desaparece
+            alertMsg.textContent = null
+            alertMsg.style.display = "none"
+        } else{
+            // A mensagem de alerta é apagada e desaparece
+            alertMsg.textContent = null
+            alertMsg.style.display = "none"
+            // O botão "Iniciar" desaparece
+            startBtn.style.display = "none" 
+            // O campo do nome do jogador fica na cor padrão
+            playerName.style.backgroundColor = "white"
+            // A janela vai diminuir porque o botão sumiu
+            menuCard.style.height = "auto"  
+        }
 
+        // Condição que vai agir se o usuário inserir espaço em branco
+        if(/\s/.test(playerName.value)){
+            // O campo "Usuário" muda de cor para vermelho
+            playerName.style.backgroundColor = "rgb(245, 76, 46)"
+            // A mensagem de alerta é exibida na tela
+            alertMsg.style.display = "block"
+            alertMsg.textContent = "Não pode conter espaços em branco"
+            // O botão "Iniciar" some
+            startBtn.style.display = "none"
+        }
+    })
+}
 
-
-
-
-// // Função que verifica a cada digito se o que foi digitado no campo "Usuário" está dentro das condições
-// userField.addEventListener("input", function(){
-//     // Função que vai deixar tudo o que for digitado no campo "Usuário" em letras maiúsculas
-//     this.value = this.value.toUpperCase()
-
-//     // Se o que foi digitado no campo "Usuário" atender as condições abaixo, então ele mexe em algumas configurações:
-//     if(userField.value.length >= 3){
-//         // O tamanho da janela aumenta para caber o botão "Iniciar"
-//         menuCard.style.height = "170px" 
-//         // O botão "Iniciar" aparece lentamente
-//         startButton.style.animation = "CarregarItem 500ms ease-out"    
-//         // O campo "Usuário" fica na cor padrão
-//         userField.style.backgroundColor = "white"
-//         // O botão fica visível
-//         startButton.style.display = "block"    
-//         // A mensagem que é disparada quando o usuário digita mais de 15 caracteres ou coloca espaços em branco é apagada
-//         msgAlerta.textContent = null   
-//     }
-
-//     // Se nenhuma das condições acima for atendida, ou seja, não tiver nada digitado, esta será executada
-//     else{
-//         // A mensagem que é disparada quando o usuário digita mais de 15 caracteres ou coloca espaços em branco é apagada
-//         msgAlerta.textContent = null 
-//         // O botão desaparece
-//         startButton.style.display = "none" 
-//         // O campo "Usuário" fica na cor padrão
-//         userField.style.backgroundColor = "white"
-//         // A janela vai diminuir porque o botão sumiu
-//         menuCard.style.height = "120px"  
-//     }
-
-//     // Se o nome do usuário conter
-//     if(/\s/.test(userField.value)){
-//         // A janela vai aumentar um pouco de tamanho para caber a mensagem de alerta
-//         menuCard.style.height = "135px"
-//         // O campo "Usuário" muda de cor para vermelho
-//         userField.style.backgroundColor = "rgb(245, 76, 46)"
-//         // A mensagem de alerta é exibida na tela
-//         msgAlerta.textContent = "O nome de usuário não pode conter espaços em brancos"
-//         // O botão "Iniciar" some
-//         startButton.style.display = "none"
-//     }
-// })
-
-// Essa função acontece quando o usuário clicar no botão "Iniciar"
+// Caso o jogador clique no botão "Iniciar", esta função é executada
 function Start(){
-    // Se de alguma maneira o usuário conseguir driblar todas as condições da função aneterior, acontecerá isso:
+    // Se de alguma maneira o jogador conseguir driblar todas as condições da função anterior
     if(userField.value.length == 0 || userField.value.includes(" ") || userField.value.length > 15){
         // Uma caixa de alerta será disparada
-        alert("Nome de usuário inválido. Não pode ficar em branco, conter espaços e ultrapassar o limite de caracteres.")
+        alert("Nome inválido. Não pode ficar em branco, conter espaços ou ultrapassar o limite de caracteres.")
         // A página é recarregada
         location.reload()
     }

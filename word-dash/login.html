@@ -14,28 +14,30 @@
         <span class="move-letter">D</span><span class="move-letter">a</span><span class="move-letter">s</span><span class="move-letter">h</span>
     </h1>   
     <div id="container">
-        <button id="return-btn" onclick="Return()" style="display: none;">
-            <img src="img/retornar.png">
-        </button>
         <div id="menu-card">
+            <button id="return-btn" onclick="Return()" style="display: none;"></button>
             <div id="gamemodes">
                 <button id="singleplayer" onclick="Gamemode('singleplayer')">Um jogador</button>
                 <button id="multiplayer" onclick="Gamemode('multiplayer')">Multijogador</button>
             </div>
             <div id="opt-singleplayer" style="display: none;">
                 <p>Digite seu nome</p>
-                <input type="text" id="player-0" class="nickname">
+                <input type="text" id="player-0" class="playername" maxlength="15">
+                <p id="alert-msg"></p>
             </div>
             <div id="opt-multiplayer" style="display: none;">
                 <p>Nome do jogador 1</p>
-                <input type="text" id="player-1" class="nickname">
+                <input type="text" id="player-1" class="playername" maxlength="15">
                 <p>Nome do jogador 2</p>
-                <input type="text" id="player-2" class="nickname">
+                <input type="text" id="player-2" class="playername" maxlength="15">
                 <p>Nome do jogador 3</p>
-                <input type="text" id="player-3" class="nickname">
+                <input type="text" id="player-3" class="playername" maxlength="15">
                 <p>Nome do jogador 4</p>
-                <input type="text" id="player-4" class="nickname">
+                <input type="text" id="player-4" class="playername" maxlength="15">
             </div>
+            <p id="alert-msg"></p>
+            <button id="start-btn" style="display: none;" onclick="Start()">Iniciar</button>
+            <button id="next-btn" style="display: none;"></button>
         </div>
     </div>
     <script src="js/login.js"></script>

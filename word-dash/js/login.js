@@ -63,8 +63,6 @@ for(const playerName of playersName){
             startBtn.style.display = "none" 
             // O campo do nome do jogador fica na cor padrão
             playerName.style.backgroundColor = "white"
-            // A janela vai diminuir porque o botão sumiu
-            menuCard.style.height = "auto"  
         }
 
         // Condição que vai agir se o usuário inserir espaço em branco
@@ -82,15 +80,17 @@ for(const playerName of playersName){
 
 // Caso o jogador clique no botão "Iniciar", esta função é executada
 function Start(){
-    // Se de alguma maneira o jogador conseguir driblar todas as condições da função anterior
-    if(userField.value.length == 0 || userField.value.includes(" ") || userField.value.length > 15){
-        // Uma caixa de alerta será disparada
-        alert("Nome inválido. Não pode ficar em branco, conter espaços ou ultrapassar o limite de caracteres.")
-        // A página é recarregada
-        location.reload()
-    }
+    
+    // // Se de alguma maneira o jogador conseguir driblar todas as condições da função anterior
+    // if(userField.value.length == 0 || userField.value.includes(" ") || userField.value.length > 15){
+    //     // Uma caixa de alerta será disparada
+    //     alert("Nome inválido. Não pode ficar em branco, conter espaços ou ultrapassar o limite de caracteres.")
+    //     // A página é recarregada
+    //     location.reload()
+    // }
+
     // Armazena o nome do usuário no localStorage
-    localStorage.setItem('userName', userField.value)
+    localStorage.setItem('playerName', userField.value)
 
     // A janela vai ser movida para baixo
     menuCard.style.animation += "MoverMenu 2.5s"

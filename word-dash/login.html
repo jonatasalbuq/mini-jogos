@@ -15,25 +15,30 @@
     </h1>   
     <div id="container">
         <div id="menu-card">
-            <button id="return-btn" onclick="Return()" style="display: none;"></button>
+            <button id="return-btn" style="display: none;"></button>
             <div id="gamemodes">
-                <button id="singleplayer" onclick="Gamemode('singleplayer')">Um jogador</button>
-                <button id="multiplayer" onclick="Gamemode('multiplayer')">Multijogador</button>
+                <button id="singleplayer-btn">Um jogador</button>
+                <button id="multiplayer-btn">Multijogador</button>
             </div>
             <div id="opt-singleplayer" style="display: none;">
                 <p>Digite seu nome</p>
-                <input type="text" id="player-0" class="playername" maxlength="15">
-                <p id="alert-msg"></p>
+                <input type="text" id="singleplayer-inp" class="playername-inp" maxlength="15" autocomplete="off">
             </div>
             <div id="opt-multiplayer" style="display: none;">
-                <p>Nome do jogador 1</p>
-                <input type="text" id="player-1" class="playername" maxlength="15">
+                <div id="quantity-players">
+                    <p>Quantidade de jogadores</p>
+                    <input type="number" id="total-players" max="4" min="2" maxlength="1" value="2" onkeydown="return false" autocomplete="off">
+                </div>
+                <div id="playersname" style="display: none;">
+                    <p>Nome do jogador <span id="player-number">1</span></p>
+                    <input type="text" id="multiplayer-inp" class="playername-inp" maxlength="15" autocomplete="off">
+                </div>
             </div>
-            <p id="alert-msg"></p>
-            <button id="start-btn" style="display: none;" onclick="Start()">Iniciar</button>
-            <button id="next-btn" style="display: none;"></button>
+            <p id="alert-msg" style="display: none;"></p>
+            <button id="save-btn" style="display: none;">Salvar</button>
+            <button id="start-btn" style="display: none;">Iniciar</button>
         </div>
     </div>
-    <script src="js/login.js"></script>
+    <script src="js/main-menu.js" type="module"></script>
 </body>
 </html>

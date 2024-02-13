@@ -1,5 +1,5 @@
 let welcome = document.querySelector("#welcome")
-let userName = localStorage.getItem("userName")     // Resgata o nome do usuário no localStorage
+let userName = localStorage.getItem("Playername")     // Resgata o nome do usuário no localStorage
 let chooseDiff = document.querySelector("#choose-diff")
 let diff = document.querySelector("#difficulty")
 
@@ -16,25 +16,9 @@ chooseDiff.style.animation = "CarregarItem 2s ease-out"
 diff.style.display = "flex"
 diff.style.animation = "CarregarItem 3s ease-out"
 
-// Esta função irá misturar as letras do alfabeto e retornar um array delas
-function LetterMixer(){
-    let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    const mixedLetters = []
-  
-    for (let i = 0; i < 200; i++) {
-        let randomString = ''
-
-        for (let j = 0; j < 8; j++) {
-            let randomIndex = Math.floor(Math.random() * letters.length)
-            let randomLetter = letters.charAt(randomIndex)
-            randomString += randomLetter
-        }
-
-        mixedLetters.push(randomString)
-    }
-
-    return mixedLetters
-}
+// ----------------------------------------------------
+//              LETTERMIXER EXPORTADA
+// ----------------------------------------------------
 
 function GamePrepare(gameMode){
     let court = document.querySelector("#courtesy")
@@ -45,13 +29,12 @@ function GamePrepare(gameMode){
     let hardLvl = document.querySelector("#hard")
     let specLvl = document.querySelector("#special")
     let gameWindow = document.querySelector("#game-window")
-    let userName = localStorage.getItem("userName")     // Resgata o nome do usuário
+    let userName = localStorage.getItem("Playername")     // Resgata o nome do usuário
     let showUser = document.querySelector("#show-user")
     let init = document.querySelector("#initiate")
     let wordDash = document.querySelector("#word-dash")
     let points = document.querySelector("#points")
     let timer = 0
-    let words
 
     // Remove o evento de click para não executar essas funções várias vezes
     easyLvl.removeAttribute("onclick")
@@ -77,16 +60,7 @@ function GamePrepare(gameMode){
             specLvl.textContent = null
             // Um array de palavras é atribuido a variável "words"
             words = [
-                "ACATAR","ACELERA","ALERTA","ALTOS","AMIGOS","ANULAR","APROVA","ATIVOS","BAIXOS","BANCO",
-                "BEIJO","BRANCO","BRINCA","BRINCO","CAIXAS","CANTAR","CEGO","CHUVA","CIDADE","COBRA",
-                "COLHER","COMIDA","COMPRAR","CONTA","CORRER","CRESCA","CURIOSO","CURTIR","DESEJO","DIZER",
-                "DIZIMAR","DOENTE","DORMIR","ENTRAR","ESCOLA","ESPADA","ESPERA","EXEMPLO","FALAR","FALHA",
-                "FAVOR","FELIZ","FESTAS","FOGO","GANHA","GARFO","GERAL","GRADE","GRANDE","HANGAR","HORA",
-                "HONRA","HORTA","HUMANO","JANELA","JANTAR","JEITO","JOGOS","JUNTOS","LARGO","LEVE","LICOR",
-                "LOCUTOR","LOUCO","LUZES","MELHOR","MENTIR","MOEDA","MUDAR","NADAR","NUVEM","OBRAS",
-                "OFERTA","OLHAR","PAGAR","PASSA","PENSAR","PERDA","PESCA","PIADA","PODER","PRATA","QUEIMA",
-                "QUANDO","REDE","ROUPAS","SALTO","SEDOSO","SORTE","TARDE","TROUXE","URGIR","URNA","USAR",
-                "VENDA","VIDA","VIVER","VOLTA","ZEBRA","ZERO"
+                // -------------------------------------------------------------------------
             ]
             // O timer do jogo terá 2.5 segundos
             timer = 2500
@@ -102,21 +76,7 @@ function GamePrepare(gameMode){
             specLvl.textContent = null
             // Um array de palavras é atribuido a variável "words"
             words = [
-                "AEROPORTO","ACADEMIA","ACOLHEDOR","ANALISAR","ANATOMIA","APROVEITAR","ASSUSTADOR",
-                "AUTOESTIMA","BENEVOLENTE","BICICLETA","BRILHANTE","BRINCADEIRA","CONVENCER","CLARAMENTE",
-                "COMPLEMENTO","CRESCIMENTO","CURIOSIDADE","DESENVOLVER","DESPERTAR","DETERMINAR",
-                "DOMINANTE","EFICIENTE","ELETRIZAR","ENCANTAR","ENTENDIMENTO","ESCANDALOSO","EXPERIENTE",
-                "EXPERIMENTAR","FASCINANTE","FLORESTA","FRATERNIDADE","FORTALEZA","GARANTIA","GELADEIRA",
-                "GENEROSIDADE","GLAMOUROSO","HABILIDOSO","HONESTIDADE","HORIZONTE","HOSPITAL","IMPORTANTE",
-                "IMIGRANTE","INFLUENTE","INSISTIR","INSPIRADOR","INTELIGENTE","INTERESSANTE","IMPRESSIONAR",
-                "JABUTICABA","JORNALISTA","JUSTIFICAR","JUVENTUDE","LEALDADE","LEGITIMAR","LIBERDADE",
-                "LINGUAGEM","LUMINOSO","MAGNITUDE","MARAVILHOSO","METAMORFOSE","MELHORAR","MILAGROSO",
-                "NARRADOR","NASCIMENTO","NOVEMBRO","NUTRIENTE","OBSERVAR","OPORTUNO","ORGANIZAR","OTIMISTA",
-                "PREOCUPADO","PROCRASTINAR","PROCURAR","PROGRESSO","PROPRIEDADE","QUADRILHA","QUARENTENA",
-                "QUESTIONAR","REALIZAR","RECONHECER","RELEVANTE","RESTAURANTE","SABEDORIA","SALVADOR",
-                "SIMPLIFICAR","SINTONIA","SUBMETER","TELEFONE","TRADICIONAL","TRANQUILIZAR","TURBINADO",
-                "ULTRAPASSAR","ULTRAVIOLETA","UNIFORTE","UNIVERSO","URBANIDADE","VALORIZAR","VANTAJOSO",
-                "VITALIDADE","VIVIFICAR"
+                // ---------------------------------------------------------------------------
             ]
             // O timer do jogo terá 3 segundos
             timer = 3000
@@ -132,26 +92,7 @@ function GamePrepare(gameMode){
             specLvl.textContent = null
             // Um array de palavras é atribuido a variável "words"
             words = [
-                "ADMINISTRATIVO","AMBIENTALISTA","ANTICONSTITUCIONAL","ANTIMILITARISTA","ARTIFICIALMENTE",
-                "AUTODIDATISMO","BIODIVERSIDADE","BIOELETRICIDADE","BIOLOGICAMENTE","CATASTROFISTAS",
-                "CERTIFICADORES","COLECIONADORA","COLONIZADORES","COMPLEMENTARES","COMPREENDIDOS",
-                "CONSEQUENCIAL","CONTEXTUALIZAR","CONTROVERSIAS","COOPERATIVISMO","CORRESPONDENTE",
-                "CRIMINALIDADES","CRONOMETRISTA","DECIDIDAMENTE","DEMOCRATIZADO","DESENVOLVIMENTO",
-                "DESTRUTURADAS","DIVERSIFICADOS","ELETRIFICADOR","EMPREENDEDORES","ENGENHEIRISMOS",
-                "ESTABILIZADAS","ESTATISTICISTA","EVOLUCIONISMO","EXEMPLIFICADO","EXPERIMENTADOS",
-                "EXTERIORIZADOS","EXTRACONSTITUCIONAL","FUNDAMENTANDO","GENERALIZADOS","HABILITACIONES",
-                "HARMONIZADORES","HOSPITALIDADE","HUMANITARISMO","IDEALIZADORES","IDENTIFICADORES",
-                "IMORTALIZADAS","IMPARCIALIDADE","IMPRESSIONANTE","IMPRESSIONISMOS","INCONSTITUCIONAL",
-                "INSTITUCIONAIS","INTELIGIBILIDADE","INTERCONECTADOS","INTERDEPENDENTE","LEGITIMIDADES",
-                "MAGNIFICAMENTE","MAJESTOSIDADE","MECANICAMENTE","METICULOSIDADE","METODOLOGICAMENTE",
-                "MODERNIZADORAS","MONITORAMENTOS","MONOTONICIDADE","NACIONALIDADE","NATURALIDADES",
-                "NECESSITAREMOS","NECESSITASSEM","NEOCONSERVADORES","OBJETIVIDADES","PECULIARIDADES",
-                "PERFECCIONISMO","PERSEVERANTES","POSITIVAMENTE","PREDOMINANTEMENTE","PRESENTEAMENTE",
-                "PROFISSIONALISMO","PROGRESSIVAMENTE","PROPAGANDISTA","PROTAGONISMOS","PROVAVELMENTE",
-                "QUALIFICATIVO","RECONHECIMENTO","RECUPERADORAS","REDUZIDAMENTE","REESTRUTURADOS",
-                "REFLEXIVAMENTE","REGIONALISMOS","RESPONSABILIDADE","SATISFAZEDORAS","SISTEMATICAMENTE",
-                "SOLIDARIEDADE","SUSTENTABILIDADE","TENDENCIOSAMENTE","TRANSPARENTEMENTE","TRASCENDENTES",
-                "TRANSPORTADOR","UNIVERSALIDADES","UTILIZABILIDADE","VANTAJOSAMENTE","VULNERABILIDADE"
+                // -------------------------------------------------------------------------------
             ]
             // O timer do jogo terá 4 segundos
             timer = 4000
@@ -232,7 +173,7 @@ function Game(words, timer){
         setTimeout(function(){wordReq.innerHTML = "3"})
         setTimeout(function(){wordReq.innerHTML = "2"}, 1000)
         setTimeout(function(){wordReq.innerHTML = "1"}, 2000)
-        setTimeout(function(){wordReq.innerHTML = "GO"}, 3000)
+        setTimeout(function(){wordReq.innerHTML = "JÁ"}, 3000)
 
         // Função setTimeOut que vai executar o setInterval assim que o tempo da contagem terminar
         setTimeout(function(){

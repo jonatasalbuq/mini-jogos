@@ -93,11 +93,11 @@ h1{
     color: black;
 }
 
-#opt-singleplayer > p:first-child{
+#opt-singleplayer > p, #opt-multiplayer p{
     font-size: 1.3em;
 }
 
-.playername{
+.playername-inp{
     width: 100%;
     border-radius: 30px;
     border-style: none;
@@ -107,6 +107,21 @@ h1{
     font-size: 1.5em;
 }
 
+#total-players{
+    display: block;
+    margin: 10px auto 0 auto;
+    font-size: 1.5em;
+    height: 50px;
+    width: 100%;
+    outline-style: none;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    user-select: none;
+}
+
 #alert-msg{
     font-size: 14px;
     margin-bottom: 5px;
@@ -114,6 +129,27 @@ h1{
     color: rgb(255, 38, 0);
     font-weight: bold;
     animation: CarregarItem 250ms ease-out;
+}
+
+#save-btn{
+    margin: auto;
+    width: 50%;
+    font-size: 1.3em;
+    background-color: transparent;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    margin-top: 10px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#save-btn:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
 }
 
 #start-btn{
@@ -126,6 +162,7 @@ h1{
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 #start-btn:hover{
